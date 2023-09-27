@@ -15,3 +15,15 @@ resource "random_string" "randomfile" {
   override_special = "/-"
 
 }
+
+resource "local_file" "prod1" {
+  count    = 1
+  content  = "Inventario"
+  filename = var.filname
+
+}
+
+variable "filname" {
+  default = "inventory.txt"
+
+}
